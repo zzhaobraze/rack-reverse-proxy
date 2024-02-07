@@ -163,7 +163,7 @@ module RackReverseProxy
     end
 
     def rack_response_headers
-      Rack::Utils::HeaderHash.new(
+      Rack::Headers.new(
         Rack::Proxy.normalize_headers(
           format_headers(target_response.headers)
         )
